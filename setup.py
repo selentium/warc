@@ -11,7 +11,7 @@ setup(
     author="Internet Archive",
     author_email="info@archive.org",
     url="http://github.com/internetarchive/warc",
-    packages=["warc"],
+    packages=["warc", "warc3"],
     platforms=["any"],
     package_data={'': ["LICENSE", "Readme.rst"]},
     include_package_data=True,
