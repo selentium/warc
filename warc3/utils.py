@@ -7,9 +7,10 @@ This file is part of warc
 :copyright: (c) 2012 Internet Archive
 """
 
-from UserDict import DictMixin
+#from UserDict import DictMixin
+import collections
 
-class CaseInsensitiveDict(DictMixin):
+class CaseInsensitiveDict(collections.MutableMapping):
     """Almost like a dictionary, but keys are case-insensitive.
     
         >>> d = CaseInsensitiveDict(foo=1, Bar=2)
@@ -41,6 +42,12 @@ class CaseInsensitiveDict(DictMixin):
         
     def keys(self):
         return list(self._d.keys())
+
+    def __len__(self):
+        return len(self._d)    
+
+    def __iter__(self):
+        return iter(self._d)    
 
 class FilePart:
     """File interface over a part of file.
